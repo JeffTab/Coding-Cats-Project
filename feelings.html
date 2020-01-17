@@ -14,10 +14,28 @@
 	$("#Modal-btn").click(function(){
 		modal.addClass("is-active");
 	});
+	$("#Modal-btn2").click(function(){
+		modal.addClass("is-active");
+	});
+	$("#Modal-btn3").click(function(){
+		modal.addClass("is-active");
+	});
 	$(".modal-close").click(function () {
 		modal.removeClass("is-active");
 	});
-	});</script>
+	
+	var Spotify ={
+		client_id: "3668979c29594280a923ed6392132bb4",
+		response_type: "code",
+		redirect_uri: "http://localhost:3000/api/v1/logging-in",
+		scope: "user-library-read user-library-modify playlist-modify-public user-top-read playlist-modify-public user-read-playback-state user-follow-modify user-read-currently-playing user-read-playback-state user-follow-read app-remote-control streaming user-read-birthdate user-read-email user-read-private",
+		show_dialog: true 
+	}
+	var Spotifyurl = "https://accounts.spotify.com/authorize/",
+	var redirect_to =Spotify "#{url}?#{query_params.to_query}"
+  
+  
+	
 
 	<link rel="stylesheet" href="style.css">
 	<title>Tickle Me Emo</title>
@@ -53,15 +71,7 @@
 							<h3>Memes</h3>
 						</div>
 						<button class="modal-close is-large" aria-label="close"></button>
-						var searchOMDB = function(movie) {
-							var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
-							$.ajax({
-								url: queryURL,
-								method: "GET"
-							}).then(function(response) {
-								createRow(response);
-							});
-						};
+						
 					</div>			
 				</article>
 			</div>
@@ -72,11 +82,11 @@
 					<figure class="image is-128x128">
 						<img class="is-rounded" src="assets/Images/Mad emu.jpg">
 					</figure>
-					<button class="button is-danger is-rounded" id="Modal-btn">Mad</button>
+					<button class="button is-danger is-rounded" id="Modal-btn2">Mad</button>
 					<div class="modal">
 						<div class="modal-background"></div>
 						<div class="modal-content">
-							<h1>Movies</h1>
+							<h1><a href="https://www.netflix.com/">Movies</a></h1>
 							<h2>Music</h2>
 							<h3>Memes</h3>
 						</div>
@@ -91,13 +101,16 @@
 					<figure class="image is-128x128">
 						<img class="is-rounded" src="assets/Images/Sad Blob.jpg">
 					</figure>
-					<button class="button is-link is-rounded">Angsty</button>
+					<button class="button is-link is-rounded" id="Modal-btn3">Angsty</button>
 				</article>
 			</div>
 		</div>
 	</div>
 
 	<script>"text/javascript"</script>
+   
+
+	
 </body>
 
 </html>
