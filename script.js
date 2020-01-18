@@ -1,22 +1,19 @@
 
-$(document).ready(() => {
+var mood;
+
+$(document).on("click", ".modal-btn", handleClick);
+
+function handleClick(event) {
+  mood = this.getAttribute("data-mood");
+  console.log(mood);
   const modal = $(".modal");
-  $("#Modal-btn").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
-  $("#Modal-btn2").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
-  $("#Modal-btn3").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
+  modal.addClass("is-active");
   $(".modal-close").click(function () {
     modal.removeClass("is-active");
   });
-});
+};
+
+$("#giphy").click(runGiphy);
 
 $("#myBtn").click(function () {
 
@@ -39,18 +36,18 @@ $("#myBtn").click(function () {
     });
 });
 
-// var GiphyqueryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
-// var emotion =
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   }).then(function (response) {
-//     console.log(response);
 
+function runGiphy() {
+  var GiphyqueryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + mood;
 
-//   });
+  $.ajax({
+    url: GiphyqueryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response);
+  });
 
-
+};
 
 // //Spotify
 //   var SpotifyqueryURL = "https://api.spotify.com/v1/playlists/{playlist_id}/";

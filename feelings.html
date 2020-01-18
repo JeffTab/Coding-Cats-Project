@@ -16,9 +16,9 @@
 	<div class="modal">
 		<div class="modal-background"></div>
 		<div class="modal-content">
-			<button class="button is-warning is-rounded" id="Modal-btn">Movies</button>
-			<button class="button is-warning is-rounded" id="Modal-btn">Music</button>
-			<button class="button is-warning is-rounded" id="Modal-btn">Memes</button>
+			<button class="button is-rounded" id="giphy">Giphy</button>
+			<button class="button is-rounded" id="spotify">Spotify</button>
+			<button class="button is-rounded" id="instagram">Instagram</button>
 		</div>
 		<button class="modal-close is-large" aria-label="close"></button>
 
@@ -40,11 +40,11 @@
 	<div class="container">
 		<div class="tile is-ancestor">
 			<div class="tile is-parent">
-				<article class="tile is-child box">
+				<article class="tile is-child box is-vcentered">
 					<figure class="image is-128x128">
 						<img class="is-rounded" src="assets/Images/Bowtie Chihuahua.jpg">
 					</figure>
-					<button class="button is-warning is-rounded" id="Modal-btn">Happy</button>
+					<button class="button is-warning is-rounded modal-btn" data-mood="happy">Happy</button>
 				</article>
 			</div>
 
@@ -54,7 +54,7 @@
 					<figure class="image is-128x128">
 						<img class="is-rounded" src="assets/Images/Mad emu.jpg">
 					</figure>
-					<button class="button is-danger is-rounded" id="Modal-btn2">Mad</button>
+					<button class="button is-danger is-rounded modal-btn" data-mood="mad">Mad</button>
 				</article>
 
 			</div>
@@ -65,7 +65,7 @@
 					<figure class="image is-128x128">
 						<img class="is-rounded" src="assets/Images/Sad Blob.jpg">
 					</figure>
-					<button class="button is-link is-rounded" id="Modal-btn3">Angsty</button>
+					<button class="button is-link is-rounded modal-btn" data-mood="angsty">Angsty</button>
 				</article>
 			</div>
 		</div>
