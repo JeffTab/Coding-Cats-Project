@@ -13,18 +13,64 @@
 
 <body>
 
+
 	<div class="modal">
 		<div class="modal-background"></div>
-		<div class="modal-content">
-			<button class="button is-rounded" id="giphy">Giphy</button>
-			<button class="button is-rounded" id="spotify">Spotify</button>
-			<button class="button is-rounded" id="instagram">Instagram</button>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">What would you like to do?</p>
+				<button class="modal-close" aria-label="close"></button>
+			</header>
+			<section class="modal-card-body">
+				<div class="row">
+					<button class="button is-rounded is-warning" id="giphy">Giphy</button>
+					<button class="button is-rounded is-danger" id="spotify">Spotify</button>
+					<button class="button is-rounded is-link" id="instagram">Instagram</button>
+				</div>
 		</div>
-		<button class="modal-close is-large" aria-label="close"></button>
+		</section>
 
 	</div>
+	</div>
+
 
 	<section class="hero is-primary is-bold">
+
+		<div class="hero-head">
+			<nav class="navbar is-fixed-top">
+				<div class="container">
+					<div class="navbar-brand">
+						<a class="navbar-item">
+						</a>
+						<span class="navbar-burger burger" data-target="navbarMenuHeroA">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</div>
+					<div id="navbarMenuHeroA" class="navbar-menu">
+						<div class="navbar-end">
+							<a class="navbar-item">
+								<figure class="image is-48x48">
+									<img class="is-rounded moodButton" src="assets/Images/Bowtie Chihuahua.jpg">
+								</figure>
+							</a>
+							<a class="navbar-item">
+								<figure class="image is-48x48">
+									<img class="is-rounded moodButton" src="assets/Images/Mad emu.jpg">
+								</figure>
+							</a>
+							<a class="navbar-item">
+								<figure class="image is-48x48">
+									<img class="is-rounded moodButton" src="assets/Images/Sad Blob.jpg">
+								</figure>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="title is-1">
@@ -37,14 +83,14 @@
 		</div>
 	</section>
 	<br>
-	<div class="container">
+	<div class="container" id="feelings-area">
 		<div class="tile is-ancestor">
 			<div class="tile is-parent">
 				<article class="tile is-child box is-vcentered">
-					<figure class="image is-128x128">
-						<img class="is-rounded" src="assets/Images/Bowtie Chihuahua.jpg">
+					<figure class="image is-128x128 ">
+						<img class="is-rounded moodButton" src="assets/Images/Bowtie Chihuahua.jpg">
 					</figure>
-					<button class="button is-warning is-rounded modal-btn" data-mood="happy">Happy</button>
+					<button class="button is-warning is-rounded modal-btn moodButton" data-mood="happy">Happy</button>
 				</article>
 			</div>
 
@@ -52,9 +98,9 @@
 			<div class="tile is-parent">
 				<article class="tile is-child box">
 					<figure class="image is-128x128">
-						<img class="is-rounded" src="assets/Images/Mad emu.jpg">
+						<img class="is-rounded moodButton" src="assets/Images/Mad emu.jpg">
 					</figure>
-					<button class="button is-danger is-rounded modal-btn" data-mood="mad">Mad</button>
+					<button class="button is-danger is-rounded modal-btn moodButton" data-mood="mad">Mad</button>
 				</article>
 
 			</div>
@@ -63,15 +109,16 @@
 			<div class="tile is-parent">
 				<article class="tile is-child box">
 					<figure class="image is-128x128">
-						<img class="is-rounded" src="assets/Images/Sad Blob.jpg">
+						<img class="is-rounded moodButton" src="assets/Images/Sad Blob.jpg">
 					</figure>
-					<button class="button is-link is-rounded modal-btn" data-mood="angsty">Angsty</button>
+					<button class="button is-link is-rounded modal-btn moodButton" data-mood="angsty">Angsty</button>
 				</article>
 			</div>
 		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="script.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/spotify.js"></script>
 </body>
 
 </html>
