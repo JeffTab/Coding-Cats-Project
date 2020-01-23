@@ -52,17 +52,19 @@
 						<div class="navbar-end">
 							<a class="navbar-item">
 								<figure class="image is-48x48">
-									<img class="is-rounded moodButton" src="assets/Images/Bowtie Chihuahua.jpg">
+									<img class="is-rounded moodButton" data-mood="happy"
+										src="assets/Images/Bowtie Chihuahua.jpg">
 								</figure>
 							</a>
 							<a class="navbar-item">
 								<figure class="image is-48x48">
-									<img class="is-rounded moodButton" src="assets/Images/Mad emu.jpg">
+									<img class="is-rounded moodButton" data-mood="mad" src="assets/Images/Mad emu.jpg">
 								</figure>
 							</a>
 							<a class="navbar-item">
 								<figure class="image is-48x48">
-									<img class="is-rounded moodButton" src="assets/Images/Sad Blob.jpg">
+									<img class="is-rounded moodButton" data-mood="angsty"
+										src="assets/Images/Sad Blob.jpg">
 								</figure>
 							</a>
 						</div>
@@ -88,7 +90,7 @@
 			<div class="tile is-parent">
 				<article class="tile is-child box is-vcentered">
 					<figure class="image is-128x128 ">
-						<img class="is-rounded moodButton" src="assets/Images/Bowtie Chihuahua.jpg">
+						<img class="is-rounded moodButton" data-mood="happy" src="assets/Images/Bowtie Chihuahua.jpg">
 					</figure>
 					<button class="button is-warning is-rounded modal-btn moodButton" data-mood="happy">Happy</button>
 				</article>
@@ -98,7 +100,7 @@
 			<div class="tile is-parent">
 				<article class="tile is-child box">
 					<figure class="image is-128x128">
-						<img class="is-rounded moodButton" src="assets/Images/Mad emu.jpg">
+						<img class="is-rounded moodButton" data-mood="mad" src="assets/Images/Mad emu.jpg">
 					</figure>
 					<button class="button is-danger is-rounded modal-btn moodButton" data-mood="mad">Mad</button>
 				</article>
@@ -109,17 +111,21 @@
 			<div class="tile is-parent">
 				<article class="tile is-child box">
 					<figure class="image is-128x128">
-						<img class="is-rounded moodButton" src="assets/Images/Sad Blob.jpg">
+						<img class="is-rounded moodButton" data-mood="angsty" src="assets/Images/Sad Blob.jpg">
 					</figure>
 					<button class="button is-link is-rounded modal-btn moodButton" data-mood="angsty">Angsty</button>
 				</article>
 			</div>
 		</div>
 	</div>
+
 	<div class="giphy-container">!</div>
 	<div class="spotify-container"></div>
 	<div class="Instagram-container"></div>
 	
+
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/spotify.js"></script>
