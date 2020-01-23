@@ -26,6 +26,13 @@ body {
   width: 80%;
 }
 
+.modal-close{
+  position: relative;
+  right: -10px;
+  top: -10px;
+  background-color: rgba(10,10,10,.2);
+
+}
 .close {
   color:#aaa;
   float: right;
@@ -40,5 +47,11 @@ close:focus {
   cursor: grabbing;
 }
 
+.row{
+  display: flex;
+  justify-content: space-evenly;
+}
 
-
+.hidden{
+  display: none;
+}

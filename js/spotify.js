@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD:script.js
 $(document).ready(() => {
   const modal = $(".modal");
   $("#Modal-btn").click(function () {
@@ -53,6 +54,8 @@ var GiphyqueryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmz
 
 
 
+=======
+>>>>>>> 60820655a23a6aa1a6a05c5d7284441a534c72c3:js/spotify.js
 // //Spotify
 //   var SpotifyqueryURL = "https://api.spotify.com/v1/playlists/{playlist_id}/";
 //   var emotion = 
