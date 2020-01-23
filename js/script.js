@@ -67,7 +67,20 @@ function runInstagram() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
 
-  // instagram functionality
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://instagramdimashirokovv1.p.rapidapi.com/tag/" + mood + "/optional",
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "InstagramdimashirokovV1.p.rapidapi.com",
+      "x-rapidapi-key": "6810fa7ef1msh4961884680403f2p17bac4jsnd77de8b9da63"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
 };
 
 function openMenu() {
