@@ -7,29 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-	$(document).ready(() => {
-		const modal = $(".modal");
-	$("#Modal-btn").click(function(){
-		modal.addClass("is-active");
-	});
-	$("#Modal-btn2").click(function(){
-		modal.addClass("is-active");
-	});
-	$("#Modal-btn3").click(function(){
-		modal.addClass("is-active");
-	});
-	$(".modal-close").click(function () {
-		modal.removeClass("is-active");
-	});
-	});</script>
-
 	<link rel="stylesheet" href="style.css">
 	<title>Tickle Me Emo</title>
 </head>
 
 <body>
+
+	<div class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<button class="button is-warning is-rounded" id="Modal-btn">Movies</button>
+			<button class="button is-warning is-rounded" id="Modal-btn">Music</button>
+			<button class="button is-warning is-rounded" id="Modal-btn">Memes</button>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+
+	</div>
+
 	<section class="hero is-primary is-bold">
 		<div class="hero-body">
 			<div class="container">
@@ -51,16 +45,6 @@
 						<img class="is-rounded" src="assets/Images/Bowtie Chihuahua.jpg">
 					</figure>
 					<button class="button is-warning is-rounded" id="Modal-btn">Happy</button>
-					<div class="modal">
-						<div class="modal-background"></div>
-						<div class="modal-content">
-							<h1>Movies</h1>
-							<h2>Music</h2>
-							<h3><a href="https://giphy.com/search/happy"></a>Memes</h3>
-						</div>
-						<button class="modal-close is-large" aria-label="close"></button>
-						
-					</div>			
 				</article>
 			</div>
 
@@ -71,14 +55,6 @@
 						<img class="is-rounded" src="assets/Images/Mad emu.jpg">
 					</figure>
 					<button class="button is-danger is-rounded" id="Modal-btn2">Mad</button>
-					<div class="modal">
-						<div class="modal-background"></div>
-						<div class="modal-content">
-							<h1><a href="https://www.netflix.com/">Movies</a></h1>
-							<h2>Music</h2>
-							<h3><a href="https://giphy.com/search/angry/"></a>Memes</h3>
-						</div>
-						<button class="modal-close is-large" aria-label="close"></button>
 				</article>
 
 			</div>
@@ -94,14 +70,8 @@
 			</div>
 		</div>
 	</div>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p class="title is-3">
-        "We're all stories in the end. Just make it a good one, eh?"- The Doctor
-      </p>
-    </div>
-  </footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="script.js"></script>
 </body>
 
 </html>

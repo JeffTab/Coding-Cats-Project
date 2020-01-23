@@ -3,9 +3,7 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
-.iframe {
-  align-self:center;
-}
+
 
 .modal {
   display: none;

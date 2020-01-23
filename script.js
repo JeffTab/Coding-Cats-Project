@@ -1,6 +1,28 @@
 
-document.getElementById("myBtn").addEventListener("click", function () {
-  
+$(document).ready(() => {
+  const modal = $(".modal");
+  $("#Modal-btn").click(function () {
+    console.log("hi");
+    modal.addClass("is-active");
+  });
+  $("#Modal-btn2").click(function () {
+    console.log("hi");
+    modal.addClass("is-active");
+  });
+  $("#Modal-btn3").click(function () {
+    console.log("hi");
+    modal.addClass("is-active");
+  });
+  $(".modal-close").click(function () {
+    modal.removeClass("is-active");
+  });
+});
+
+$("#myBtn").click(function () {
+
+  var provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('profile');
+  provider.addScope('email');
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -13,13 +35,12 @@ document.getElementById("myBtn").addEventListener("click", function () {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       // redirect to next page
-      location.replace('feelings.html');
+      location.replace('<feelings.html>')
     });
 });
+var mood;
+var GiphyqueryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
 
-
-var GiphyqueryURL = "https://giphy.com/gifs/angry-mad-anger-l1J9u3TZfpmeDLkD6";
-var emotion =
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -27,7 +48,11 @@ var emotion =
     console.log(response);
 
 
+    $("")
   });
+
+
+
 // //Spotify
 //   var SpotifyqueryURL = "https://api.spotify.com/v1/playlists/{playlist_id}/";
 //   var emotion = 
@@ -39,19 +64,19 @@ var emotion =
 //   const spotify_CLIENT = "3ad7e8dcc3bf4076b4b8ec6bb60f4e10";
 
 //   let stateKey = 'spotify_auth_state';
-  
+
 //   // on load, try to pull access_token from URL parameters
 //   // localhost:8000?access_token=[token]&state=[state]
 //   const params = getHashParams();
 //   console.log(params);
-  
+
 //   // save access_token, state, and stored state into variables
 //   let access_token = params.access_token,
 //     userId = "",
 //     playerId = "",
 //     state = params.state,
 //     storedState = localStorage.getItem(stateKey);
-  
+
 //   /**
 //    * Obtains parameters from the hash of the URL
 //    * @return Object
@@ -70,7 +95,7 @@ var emotion =
 //     }
 //     return hashParams;
 //   }
-  
+
 //   /**
 //    * Generates a random string containing numbers and letters
 //    * @param  {number} length The length of the string
@@ -80,20 +105,20 @@ var emotion =
 //   function generateRandomString(length) {
 //     let text = '';
 //     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  
+
 //     for (var i = 0; i < length; i++) {
 //       text += possible.charAt(Math.floor(Math.random() * possible.length));
 //     }
 //     return text;
 //   };
-  
+
 //   // if there's an access_token and state is either null OR doesn't equal stored
 //   // state, then let user know there's an issue with authentication
 //   if (access_token && (state == null || state !== storedState)) {
 //     console.log("You need to login.");
 //     spotifyLogin();
 //   } else {
-  
+
 //     // if authentication is successful, remove item from localStorage
 //     localStorage.removeItem(stateKey);
 //     // if there's an access token, get user information
@@ -109,26 +134,26 @@ var emotion =
 //           console.log(response);
 //           $("#login-button").hide();
 //           $("#app-body").show();
-  
+
 //           userId = response.id;
 //           $("#profile-info").html(`<h3>${response.display_name}</h3>`);
 //           // <img class="img-fluid" src="${response.images[0].url}"/>
 //         });
 //     }
 //   }
-  
+
 //   // turn on spotify player
 //   window.onSpotifyWebPlaybackSDKReady = () => {
-  
+
 //     const token = getHashParams().access_token;
-  
+
 //     const player = new Spotify.Player({
 //       name: 'Web Playback SDK Quick Start Player',
 //       getOAuthToken: cb => {
 //         cb(token);
 //       }
 //     });
-  
+
 //     // Error handling
 //     player.addListener('initialization_error', ({message}) => {
 //       console.error(message);
@@ -142,42 +167,42 @@ var emotion =
 //     player.addListener('playback_error', ({message}) => {
 //       console.error(message);
 //     });
-  
+
 //     // Playback status updates
 //     player.addListener('player_state_changed', state => {
 //       // console.log(state);
 //     });
-  
+
 //     // Ready
 //     player.addListener('ready', ({device_id}) => {
 //       console.log('Ready with Device ID', device_id);
 //       playerId = device_id;
 //       setWebPlayer(device_id, access_token);
 //     });
-  
+
 //     // Not Ready
 //     player.addListener('not_ready', ({device_id}) => {
 //       console.log('Device ID has gone offline', device_id);
 //     });
-  
+
 //     // Connect to the player!
 //     player.connect();
 //   };
-  
+
 //   // LOG INTO SPOTIFY
 //   function spotifyLogin() {
 //     const client_id = spotify_CLIENT; // Your client id
 //     const redirect_uri = (location.hostname === "localhost") ? "http://localhost:8000" : 'https://alexrosenkranz.github.io/spotify-auth'; 
-  
+
 //     // generate random state key
 //     const state = generateRandomString(16);
-  
+
 //     // set state in localStorage (will read when we get it back)
 //     localStorage.setItem(stateKey, state);
 //     // Set scope for authentication privileges
 //     const scope = 'streaming user-read-birthdate user-read-private user-read-email user-read-playba' +
 //         'ck-state user-modify-playback-state';
-  
+
 //     // build out super long url
 //     let url = 'https://accounts.spotify.com/authorize';
 //     url += '?response_type=token';
@@ -185,11 +210,11 @@ var emotion =
 //     url += '&scope=' + encodeURIComponent(scope);
 //     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 //     url += '&state=' + encodeURIComponent(state);
-  
+
 //     // change pages and go to the spotify login page
 //     window.location = url;
 //   }
-  
+
 //   // SET SPOTIFY WEB PLAYER TO BROWSER
 //   function setWebPlayer(playerId, access_token) {
 //     $.ajax({
@@ -202,13 +227,13 @@ var emotion =
 //       })
 //       .then(function (response) {
 //         console.log(response);
-  
+
 //       })
 //       .catch(function (err) {
 //         console.log(err);
 //       });
 //   }
-  
+
 //   // get logged in spotify user's playlists
 //   function getUserPlaylists() {
 //     $
@@ -224,7 +249,7 @@ var emotion =
 //         printPlaylistInfo(response.items);
 //       })
 //   }
-  
+
 //   // print out playlist information
 //   function printPlaylistInfo(playlistArray) {
 //     const $playlistInfo = $("#playlist-info");
@@ -238,7 +263,7 @@ var emotion =
 //         .appendTo($playlistInfo);
 //     });
 //   }
-  
+
 //   // get playlist tracks
 //   function selectPlaylist() {
 //     $(".playlist-button").removeClass("active");
@@ -264,19 +289,19 @@ var emotion =
 //         printTrackInfo(trackInfo, playlistUri);
 //       })
 //   }
-  
+
 //   // print tracks to page
 //   function printTrackInfo(trackArray, playlistContextUri) {
-  
+
 //     const $trackInfo = $("#track-info");
 //     $trackInfo.empty();
-  
+
 //     trackArray.forEach(function (track) {
 //       const artists = track
 //         .artists
 //         .map(artist => artist.name)
 //         .join(", ");
-  
+
 //       $("<button>")
 //         .addClass("list-group-item d-flex justify-content-between align-items-center track-button list-group-item-action")
 //         .text(`${artists} - ${track.name}`)
@@ -285,7 +310,7 @@ var emotion =
 //         .appendTo($trackInfo);
 //     });
 //   }
-  
+
 //   // select and play track
 //   function selectTrack() {
 //     $(".track-button").removeClass("active");
@@ -316,7 +341,7 @@ var emotion =
 //         console.log(err);
 //       })
 //   }
-  
+
 //   // skip song
 //   function nextSong() {
 //     $
@@ -334,7 +359,7 @@ var emotion =
 //         $("#play-button > i").removeClass("fa-play").addClass("fa-pause");
 //       });
 //   }
-  
+
 //   // previous song
 //   function prevSong() {
 //     $
@@ -352,7 +377,7 @@ var emotion =
 //         $("#play-button > i").removeClass("fa-play").addClass("fa-pause");
 //       });
 //   }
-  
+
 //   // resume playback
 //   function resumeSong() {
 //     console.log("hi")
@@ -371,7 +396,7 @@ var emotion =
 //         $("#play-button > i").removeClass("fa-play").addClass("fa-pause");
 //       });
 //   }
-  
+
 //   // pause playback
 //   function pauseSong() {
 //     console.log("hi")
@@ -389,7 +414,7 @@ var emotion =
 //         $("#play-button > i").removeClass("fa-pause").addClass("fa-play");
 //       });
 //   }
-  
+
 //   // get current song info
 //   function getCurrentSong() {
 //     $.ajax({
@@ -408,7 +433,7 @@ var emotion =
 //       $("#artist").text(response.item.artists.map(artist => artist.name).join(", "))
 //     })
 //   }
-  
+
 //   // get categories on load to select from
 //   function getCategories() {
 //     $.ajax({
@@ -429,11 +454,11 @@ var emotion =
 //   }
 //   // when selecting categories for playlists
 //   function selectCategories(event) {
-  
+
 //     event.preventDefault();
 //     // get categories out of select form
 //     const category_id = $(this).val();
-  
+
 //     $.ajax({
 //       url: `https://api.spotify.com/v1/browse/categories/${category_id}/playlists?limit=50`,
 //       method: "GET",
@@ -445,7 +470,7 @@ var emotion =
 //       printPlaylistInfo(response.playlists.items);
 //     });
 //   }
-  
+
 //   // get featured playlists
 //   function getFeaturedPlaylists() {
 //     $.ajax({
@@ -459,8 +484,8 @@ var emotion =
 //       printPlaylistInfo(response.playlists.items);
 //     })
 //   }
-  
-  
+
+
 //   // BIND CLICK EVENTS
 //   $(document)
 //     .ready(function () {
@@ -471,7 +496,7 @@ var emotion =
 //       $("#play-button").on("click", function() {
 //         // get state of button
 //         const buttonState = $(this).data("state");
-  
+
 //         if (buttonState === "play") {
 //           pauseSong();
 //         } 
@@ -486,7 +511,7 @@ var emotion =
 //       // login button to get access token
 //       $('#login-button').on('click', spotifyLogin);
 //       $("#categories-list").on("change", selectCategories);
-  
+
 //       if (!access_token) {
 //         $("#app-body").hide();
 //       } 
