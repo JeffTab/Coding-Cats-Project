@@ -57,6 +57,7 @@ function runGiphy() {
   }).then(function (response) {
     console.log(response);
   });
+  $(".giphy-container").append(mood)
 };
 
 function runSpotify() {
