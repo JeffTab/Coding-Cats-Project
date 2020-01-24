@@ -77,8 +77,19 @@ function runGiphy() {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+
+  for (var i = 0; i < 11 ;i++) {
+
+    var gifURL = response.data[i].images.downsized_medium.url; 
+
+    var gifImage = $("<img>");
+
+    gifImage.attr("src", gifURL);
+    
+    
+    $(".giphy-container").append(gifImage);
+  };
   });
-  $(".giphy-container").append(mood)
 };
 
 function runSpotify() {
@@ -138,4 +149,3 @@ function openMenu() {
     navBarMenu.addClass("is-active");
   };
 };
-
