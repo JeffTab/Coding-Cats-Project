@@ -1,22 +1,11 @@
+// variables
 var mood;
 var feelingsArea = $("#feelings-area");
 const modal = $(".modal");
 var navBarBurger = $(".navbar-burger");
 var navBarMenu = $(".navbar-menu");
 
-$(document).on("click", ".moodButton", handleClick);
-
-function handleClick(event) {
-  navBarBurger.removeClass("is-active");
-  navBarMenu.removeClass("is-active");
-  mood = this.getAttribute("data-mood");
-  console.log(mood);
-  modal.addClass("is-active");
-  $(".modal-close").click(function () {
-    modal.removeClass("is-active");
-  });
-};
-
+// login stuff
 $("#myBtn").click(function () {
   var provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('profile');
@@ -37,10 +26,24 @@ $("#myBtn").click(function () {
     });
 });
 
+// clicking on the moods
+$(document).on("click", ".moodButton", handleClick);
+
+function handleClick(event) {
+  navBarBurger.removeClass("is-active");
+  navBarMenu.removeClass("is-active");
+  mood = this.getAttribute("data-mood");
+  console.log(mood);
+  modal.addClass("is-active");
+  $(".modal-close").click(function () {
+    modal.removeClass("is-active");
+  });
+};
+
+// clicking on the APIs
 $("#giphy").click(runGiphy);
 $("#spotify").click(runSpotify);
 $("#instagram").click(runInstagram);
-$(".navbar-burger").click(openMenu);
 
 function runGiphy() {
   modal.removeClass("is-active");
@@ -79,8 +82,24 @@ function runInstagram() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
 
-  // instagram functionality
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://instagramdimashirokovv1.p.rapidapi.com/tag/" + mood + "/optional",
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "InstagramdimashirokovV1.p.rapidapi.com",
+      "x-rapidapi-key": "6810fa7ef1msh4961884680403f2p17bac4jsnd77de8b9da63"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
 };
+
+// hamburger menu
+$(".navbar-burger").click(openMenu);
 
 function openMenu() {
   if (navBarBurger.hasClass("is-active")) {
