@@ -54,7 +54,7 @@ var GiphyqueryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmz
 HEAD:script.js
 //Spotify
   
-  const spotify_CLIENT = "3668979c29594280a923ed6392132bb4";
+  const spotify_CLIENT = '3668979c29594280a923ed6392132bb4';
 
   let stateKey = 'spotify_auth_state';
   
@@ -182,7 +182,7 @@ HEAD:script.js
   // LOG INTO SPOTIFY
   function spotifyLogin() {
     const client_id = '3668979c29594280a923ed6392132bb4'; // Your client id
-    const redirect_uri = (location.hostname === "localhost") ? "http://localhost:5501" : 'https://github.com/JeffTab/Coding-Cats-Project'; 
+    const redirect_uri = (location.hostname === "localhost") ? "http://localhost:5501" : 'https://jefftab.github.io/Coding-Cats-Project/'; 
   
     // generate random state key
     const state = generateRandomString(16);
@@ -970,4 +970,4 @@ HEAD:script.js
         $("#app-body").hide();
       } 
     }); 
-d7cd22553fe5cf4088979954ccad90f0d4b8d98d:js/spotify.js
+
