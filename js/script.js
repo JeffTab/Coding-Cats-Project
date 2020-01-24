@@ -518,6 +518,7 @@ HEAD:script.js
     url: queryURL,
     method: "GET"
   }).then(function (response) {
+
   })
   const spotify_CLIENT = "3668979c29594280a923ed6392132bb4";
 
@@ -550,6 +551,43 @@ HEAD:script.js
         .substring(1);
     while (e = r.exec(q)) {
       hashParams[e[1]] = decodeURIComponent(e[2]);
+=======
+    console.log(response);
+
+  for (var i = 0; i < 11 ;i++) {
+
+    var gifURL = response.data[i].images.downsized_medium.url; 
+
+    var gifImage = $("<img>");
+
+    gifImage.attr("src", gifURL);
+    
+    
+    $(".giphy-container").append(gifImage);
+  };
+  });
+};
+
+function runSpotify() {
+  modal.removeClass("is-active");
+  feelingsArea.addClass("hidden");
+
+  // spotify functionality
+};
+
+function runInstagram() {
+  modal.removeClass("is-active");
+  feelingsArea.addClass("hidden");
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://instagramdimashirokovv1.p.rapidapi.com/tag/" + mood + "/optional",
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "InstagramdimashirokovV1.p.rapidapi.com",
+      "x-rapidapi-key": "6810fa7ef1msh4961884680403f2p17bac4jsnd77de8b9da63"
+
     }
     return hashParams;
   }
@@ -642,6 +680,7 @@ HEAD:script.js
     // Connect to the player!
     player.connect();
   };
+
 
   // LOG INTO SPOTIFY
   function spotifyLogin() {
@@ -970,4 +1009,7 @@ HEAD:script.js
         $("#app-body").hide();
       } 
     }); 
+
+=======
+};
 
