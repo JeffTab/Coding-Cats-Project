@@ -5,8 +5,18 @@ const modal = $(".modal");
 var navBarBurger = $(".navbar-burger");
 var navBarMenu = $(".navbar-menu");
 var instagramContainer = $(".instagram-container");
-var userInfo = localStorage.getItem("user");
-var userName
+
+// var userInfo = localStorage.getItem("user");
+// // var userInfoArray = userInfo.split(",");
+// // console.log(userInfoArray);
+// // var userName = userInfoArray.displayName;
+// // console.log(userName);
+// // var userPic = userInfoArray.photoURL;
+// // console.log(userPic);
+
+// var userName = userInfo.getDisplayName();
+// console.log(userName);
+
 
 // login stuff
 $("#myBtn").click(function () {
@@ -17,16 +27,23 @@ $("#myBtn").click(function () {
     .auth()
     .signInWithPopup(provider)
     .then(function (result) {
+
       // This gives you a Google Access Token.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
+
       // save data to localstorage
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       // redirect to next page
-      location.replace('http://127.0.0.1:5501/feelings.html')
+      // page for live testing
+      location.replace('http://127.0.0.1:5501/feelings.html');
+      // page for final hosted page
+      // location.replace('https://jefftab.github.io/Coding-Cats-Project/feelings');
+      console.log(result);
     });
+  console.log(result);
 });
 
 // clicking on the moods
