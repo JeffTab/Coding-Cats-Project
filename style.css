@@ -61,5 +61,7 @@ close:focus {
 }
 
 #userInfoBox{
-  margin-left:15px;
+  
+  flex-direction: column;
 }
+

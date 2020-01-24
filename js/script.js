@@ -4,18 +4,25 @@ var feelingsArea = $("#feelings-area");
 const modal = $(".modal");
 var navBarBurger = $(".navbar-burger");
 var navBarMenu = $(".navbar-menu");
+var giphyContainer = $(".giphy-container");
+var spotifyContainer = $(".spotify-container");
 var instagramContainer = $(".instagram-container");
+var userInfoBox = $("#userInfoBox");
 
+// userinfo pull and print
 // var userInfo = localStorage.getItem("user");
-// // var userInfoArray = userInfo.split(",");
-// // console.log(userInfoArray);
-// // var userName = userInfoArray.displayName;
-// // console.log(userName);
-// // var userPic = userInfoArray.photoURL;
-// // console.log(userPic);
+// var userInfoArray = JSON.parse(userInfo);
+// console.log(userInfoArray);
+// var userName = userInfoArray.displayName;
+// var userPic = userInfoArray.photoURL;
+// var userFigure = $("<figure>");
+// userFigure.attr("class", "image is-128x128");
+// var userImage = $("<img>");
+// userImage.attr("src", userPic);
+// userImage.attr("alt", "user image");
+// userInfoBox.append(userImage);
+// userInfoBox.append(userName);
 
-// var userName = userInfo.getDisplayName();
-// console.log(userName);
 
 
 // login stuff
@@ -41,9 +48,9 @@ $("#myBtn").click(function () {
       location.replace('http://127.0.0.1:5501/feelings.html');
       // page for final hosted page
       // location.replace('https://jefftab.github.io/Coding-Cats-Project/feelings');
-      console.log(result);
+
     });
-  console.log(result);
+
 });
 
 // clicking on the moods
@@ -55,6 +62,8 @@ function handleClick(event) {
   mood = this.getAttribute("data-mood");
   console.log(mood);
   modal.addClass("is-active");
+  giphyContainer.empty();
+  spotifyContainer.empty();
   instagramContainer.empty();
   $(".modal-close").click(function () {
     modal.removeClass("is-active");
@@ -69,6 +78,9 @@ $("#instagram").click(runInstagram);
 function runGiphy() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
+  giphyContainer.removeClass("hidden");
+  spotifyContainer.addClass("hidden");
+  instagramContainer.addClass("hidden");
 
   var GiphyqueryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + mood;
 
@@ -78,23 +90,21 @@ function runGiphy() {
   }).then(function (response) {
     console.log(response);
 
-  for (var i = 0; i < 11 ;i++) {
-
-    var gifURL = response.data[i].images.downsized_medium.url; 
-
-    var gifImage = $("<img>");
-
-    gifImage.attr("src", gifURL);
-    
-    
-    $(".giphy-container").append(gifImage);
-  };
+    for (var i = 0; i < 11; i++) {
+      var gifURL = response.data[i].images.downsized_medium.url;
+      var gifImage = $("<img>");
+      gifImage.attr("src", gifURL);
+      giphyContainer.append(gifImage);
+    };
   });
 };
 
 function runSpotify() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
+  giphyContainer.addClass("hidden");
+  spotifyContainer.removeClass("hidden");
+  instagramContainer.addClass("hidden");
 
   // spotify functionality
 };
@@ -102,6 +112,8 @@ function runSpotify() {
 function runInstagram() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
+  giphyContainer.addClass("hidden");
+  spotifyContainer.addClass("hidden");
   instagramContainer.removeClass("hidden");
 
 
