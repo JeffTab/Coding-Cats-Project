@@ -1,4 +1,6 @@
 # Coding-Cats-Project
-How do you feel today?
+How do you feel today? Do you feel happy? Sad? or maybe you don't know how you feel and you're in this emotional limbo. Well no matter what your answer to that question was, I think we can all agree that as useful as they are some emotions suck and we would rather be happy. Imagine for a second that you just had a rough day at work, boss is on your ass for deadlines, your team talks a big game but all they do is get drunk without you and leave you to do all the work. To top it off as soon as you get home your spouse is waiting for you at the door ready to hand off your teething toddler with a penchant for the most disgusting but at times adorable snot filled cries. So now you're in your car/room/office, feelings welling up with your phone in hand looking for an answer, how do i change my mood and quick? 
 
-Rodny created this
+Our answer, to flood your senses with media that will either keep you happy or get you happy if that is what you choose. 
+Unless you've been hiding under a rock for the past 10 years we all know that the idea of media has changed it is no longer a full-length film or a night at the opera. It now can just be a 7 second video, a meme, or the first 30 seconds to a song. The Yellow Violin wants to use all of the media at our disposal to make sure that you continue or start to experience whatever emotion you desire. 
+The idea came to us after hearing about a canibus project which would match you with a strain of weed depending on how you were feeling in the moment. 
