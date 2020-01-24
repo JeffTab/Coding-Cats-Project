@@ -56,6 +56,15 @@ close:focus {
   display: none;
 }
 
+#myBtn{
+  margin-bottom: 24px;
+}
+
+#userInfoBox{
+  
+  flex-direction: column;
+}
+
 #playlist-info, #track-info {
   max-height: 50vh;
   overflow: scroll;
