@@ -3,6 +3,8 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
+
+
 .modal {
   display: none;
   position: fixed;
@@ -52,4 +54,8 @@ close:focus {
 
 .hidden{
   display: none;
+}
+
+#myBtn{
+  margin-bottom: 24px;
 }

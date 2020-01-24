@@ -4,6 +4,9 @@ var feelingsArea = $("#feelings-area");
 const modal = $(".modal");
 var navBarBurger = $(".navbar-burger");
 var navBarMenu = $(".navbar-menu");
+var instagramContainer = $(".instagram-container");
+var userInfo = localStorage.getItem("user");
+var userName
 
 // login stuff
 $("#myBtn").click(function () {
@@ -22,7 +25,7 @@ $("#myBtn").click(function () {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       // redirect to next page
-      location.replace('<feelings.html>')
+      location.replace('http://127.0.0.1:5501/feelings.html')
     });
 });
 
@@ -35,6 +38,7 @@ function handleClick(event) {
   mood = this.getAttribute("data-mood");
   console.log(mood);
   modal.addClass("is-active");
+  instagramContainer.empty();
   $(".modal-close").click(function () {
     modal.removeClass("is-active");
   });
@@ -57,6 +61,7 @@ function runGiphy() {
   }).then(function (response) {
     console.log(response);
   });
+  $(".giphy-container").append(mood)
 };
 
 function runSpotify() {
@@ -69,6 +74,8 @@ function runSpotify() {
 function runInstagram() {
   modal.removeClass("is-active");
   feelingsArea.addClass("hidden");
+  instagramContainer.removeClass("hidden");
+
 
   var settings = {
     "async": true,
@@ -79,11 +86,26 @@ function runInstagram() {
       "x-rapidapi-host": "InstagramdimashirokovV1.p.rapidapi.com",
       "x-rapidapi-key": "6810fa7ef1msh4961884680403f2p17bac4jsnd77de8b9da63"
     }
-  }
+  };
 
   $.ajax(settings).done(function (response) {
     console.log(response);
-  });
+  })
+
+    .then(function (response) {
+
+      for (var i = 0; i < 99; i++) {
+        var imageURL = response.edges[i].node.display_url;
+        var instaFigure = $("<figure>");
+        instaFigure.attr("class", "image is-128x128");
+        var instaImage = $("<img>");
+        var instaAlt = response.edges[i].node.accessibility_caption;
+        instaImage.attr("src", imageURL);
+        instaImage.attr("alt", instaAlt);
+        (instagramContainer).append(instaImage);
+
+      };
+    });
 };
 
 // hamburger menu
