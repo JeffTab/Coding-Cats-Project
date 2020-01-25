@@ -39,6 +39,10 @@
 		<div class="hero-head">
 			<nav class="navbar is-fixed-top">
 				<div class="container">
+					<div class="navbar-start">
+						<div class="navbar-item" id="userInfoBox">
+						</div>
+					</div>
 					<div class="navbar-brand">
 						<a class="navbar-item">
 						</a>
@@ -52,7 +56,8 @@
 						<div class="navbar-end">
 							<a class="navbar-item">
 								<figure class="image is-48x48">
-									<img class="is-rounded moodButton" data-mood="happy" src="assets/Images/Bowtie Chihuahua.jpg">
+									<img class="is-rounded moodButton" data-mood="happy"
+										src="assets/Images/Bowtie Chihuahua.jpg">
 								</figure>
 							</a>
 							<a class="navbar-item">
@@ -62,11 +67,13 @@
 							</a>
 							<a class="navbar-item">
 								<figure class="image is-48x48">
-									<img class="is-rounded moodButton" data-mood="angsty" src="assets/Images/Sad Blob.jpg">
+									<img class="is-rounded moodButton" data-mood="angsty"
+										src="assets/Images/Sad Blob.jpg">
 								</figure>
 							</a>
 						</div>
 					</div>
+
 				</div>
 			</nav>
 		</div>
@@ -117,10 +124,9 @@
 		</div>
 	</div>
 
-	<div class="giphy-container">!</div>
-	<div class="spotify-container"></div>
-	<div class="Instagram-container"></div>
-
+	<div class="giphy-container hidden">!</div>
+	<div class="spotify-container hidden"></div>
+	<div class="instagram-container hidden"></div>
 
 
 	<footer class="footer">
@@ -133,6 +139,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/spotify.js"></script>
 	<script src="https://sdk.scdn.co/spotify-player.js"></script>
 </body>
 
