@@ -45,9 +45,9 @@ $("#myBtn").click(function () {
       localStorage.setItem('user', JSON.stringify(user));
       // redirect to next page
       // page for live testing
-      location.replace('http://127.0.0.1:5501/feelings.html');
+      // location.replace('http://127.0.0.1:5500/Coding-Cats-Project/feelings.html');
       // page for final hosted page
-      // location.replace('https://jefftab.github.io/Coding-Cats-Project/feelings');
+      location.replace('https://jefftab.github.io/Coding-Cats-Project/feelings');
 
     });
 

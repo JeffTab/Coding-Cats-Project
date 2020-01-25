@@ -1,56 +1,6 @@
 
 
-$(document).ready(() => {
-  const modal = $(".modal");
-  $("#Modal-btn").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
-  $("#Modal-btn2").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
-  $("#Modal-btn3").click(function () {
-    console.log("hi");
-    modal.addClass("is-active");
-  });
-  $(".modal-close").click(function () {
-    modal.removeClass("is-active");
-  });
-});
 
-$("#myBtn").click(function () {
-
-  var provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('profile');
-  provider.addScope('email');
-  firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then(function (result) {
-      // This gives you a Google Access Token.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // save data to localstorage
-      localStorage.setItem('token', token);
-      localStorage.setItem('user', JSON.stringify(user));
-      // redirect to next page
-      location.replace('<feelings.html>')
-    });
-});
-var mood;
-var GiphyqueryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
-
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {
-  console.log(response);
-
-
-  $("")
-});
 
 //Spotify
 
