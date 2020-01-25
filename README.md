@@ -1,11 +1,6 @@
 # Coding-Cats-Project
 How do you feel today? Do you feel happy? Sad? or maybe you don't know how you feel and you're in this emotional limbo. Well no matter what your answer to that question was, I think we can all agree that as useful as they are some emotions suck and we would rather be happy. Imagine for a second that you just had a rough day at work, boss is on your ass for deadlines, your team talks a big game but all they do is get drunk without you and leave you to do all the work. To top it off as soon as you get home your spouse is waiting for you at the door ready to hand off your teething toddler with a penchant for the most disgusting but at times adorable snot filled cries. So now you're in your car/room/office, feelings welling up with your phone in hand looking for an answer, how do i change my mood and quick? 
 
-
-While simple, this application has a lot of room for growth and refinement. Some ways in which the application can grow are by adding a suggestions function that helps the user to better decide if they want a good movie or a play list to dance in the rain with. We could also expand on our range of emotions so that there is more wiggle room for the user in knowing how to approach whatever they are feeling in that moment. By also expanding the options past memes, music, and social media we can draw in a larger crowd of users that find solace in other things…like books. 
-
-Make your own personal diary with a soundtrack. Have a setting that alerts when you’ve listened to ten or more sad or breakup songs.  The user can choose a function to record and have an oral diary of sorts. There are ways upon ways in which this application can develop and be tailored for each user.  As Dr. Seuss said “Think and wonder, wonder and think.”
-
 Our answer, to flood your senses with media that will either keep you happy or get you happy if that is what you choose. 
 Unless you've been hiding under a rock for the past 10 years we all know that the idea of media has changed it is no longer a full-length film or a night at the opera. It now can just be a 7 second video, a meme, or the first 30 seconds to a song. The Yellow Violin wants to use all of the media at our disposal to make sure that you continue or start to experience whatever emotion you desire. 
 The idea came to us after hearing about a canibus project which would match you with a strain of weed depending on how you were feeling in the moment. 
@@ -23,3 +18,8 @@ And the successes lie in our finished project and the things we learned along th
 
 Oh, the biggest challenge was github.  We encountered difficulties.  If I understood those difficulties better, I could explain them.  And maybe we wouldn't have had them.  But I don't.  
 
+## Future Development
+
+While simple, this application has a lot of room for growth and refinement. Some ways in which the application can grow are by adding a suggestions function that helps the user to better decide if they want a good movie or a play list to dance in the rain with. We could also expand on our range of emotions so that there is more wiggle room for the user in knowing how to approach whatever they are feeling in that moment. By also expanding the options past memes, music, and social media we can draw in a larger crowd of users that find solace in other things…like books. 
+
+Make your own personal diary with a soundtrack. Have a setting that alerts when you’ve listened to ten or more sad or breakup songs.  The user can choose a function to record and have an oral diary of sorts. There are ways upon ways in which this application can develop and be tailored for each user.  As Dr. Seuss said “Think and wonder, wonder and think.”
