@@ -107,6 +107,7 @@ function runSpotify() {
   instagramContainer.addClass("hidden");
 
   // spotify functionality
+  selectPlaylist(mood);
 };
 
 function runInstagram() {
